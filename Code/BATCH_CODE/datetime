@@ -1,0 +1,10 @@
+import datetime
+def timefunc(dat):
+    today = datetime.datetime.now()
+    today1 = today.strftime('%Y-%m-%d %H:%M:%S.%f')
+    datetimeFormat = '%Y-%m-%d %H:%M:%S.%f'
+    diff = datetime.datetime.strptime(today1, datetimeFormat) - datetime.datetime.strptime(dat, datetimeFormat)
+    diff1 = diff.days
+    return diff1
+    
+trainDatamh['Timestamp'] = trainDatamh['Timestamp'].apply(lambda x: timefunc(x))
